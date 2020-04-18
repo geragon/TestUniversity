@@ -10,6 +10,7 @@ public class HomePage {
     private By dropDownLink = By.linkText("Dropdown");
     private By hoverLink = By.linkText("Hovers");
     private By keyPressesLink = By.linkText("Key Presses");
+    private By javascriptAlertsLink = By.linkText("JavaScript Alerts");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -33,7 +34,11 @@ public class HomePage {
     public KeyPressesPage clickKeyPressesLink(){
         driver.findElement(keyPressesLink).click();
         return new KeyPressesPage(driver);
+    }
 
+    public AlertsPage clickJavascriptAlertsLink(){
+        driver.findElement(javascriptAlertsLink).click();
+        return new AlertsPage(driver);
     }
 
 }
