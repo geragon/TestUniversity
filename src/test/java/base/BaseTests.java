@@ -4,10 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pages.DropdownPage;
-import pages.HomePage;
-import pages.HoverPage;
-import pages.KeyPressesPage;
+import pages.*;
 
 public class BaseTests {
 
@@ -16,6 +13,7 @@ public class BaseTests {
     protected DropdownPage dropdownPage;
     protected HoverPage hoverPage;
     protected KeyPressesPage keyPressesPage;
+    protected AlertsPage alertsPage;
 
     @BeforeClass
     public void setUp(){
@@ -27,6 +25,7 @@ public class BaseTests {
         dropdownPage = new DropdownPage(driver);
         hoverPage = new HoverPage(driver);
         //keyPressesPage = new KeyPressesPage(driver);
+        alertsPage = new AlertsPage(driver);
     }
 
     @AfterClass
