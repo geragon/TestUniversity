@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import pages.DropdownPage;
 import pages.HomePage;
 import pages.HoverPage;
+import pages.KeyPressesPage;
 
 public class BaseTests {
 
@@ -14,6 +15,7 @@ public class BaseTests {
     protected HomePage homePage;
     protected DropdownPage dropdownPage;
     protected HoverPage hoverPage;
+    protected KeyPressesPage keyPressesPage;
 
     @BeforeClass
     public void setUp(){
@@ -24,6 +26,7 @@ public class BaseTests {
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
         hoverPage = new HoverPage(driver);
+        //keyPressesPage = new KeyPressesPage(driver);
     }
 
     @AfterClass
