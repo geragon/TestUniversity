@@ -8,6 +8,7 @@ public class HomePage {
     private WebDriver driver;
     private By formAuthenticationLink = By.linkText("Form Authentication");
     private By dropDownLink = By.linkText("Dropdown");
+    private By hoverLink = By.linkText("Hovers");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -21,6 +22,13 @@ public class HomePage {
     public DropdownPage clickDropdownLink(){
         driver.findElement(dropDownLink).click();
         return new DropdownPage(driver);
+    }
+
+    public HoverPage clickHoverLink(){
+        driver.findElement(hoverLink).click();
+        return new HoverPage(driver);
+
+
     }
 
 }

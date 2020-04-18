@@ -6,12 +6,14 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.DropdownPage;
 import pages.HomePage;
+import pages.HoverPage;
 
 public class BaseTests {
 
     private WebDriver driver;
     protected HomePage homePage;
     protected DropdownPage dropdownPage;
+    protected HoverPage hoverPage;
 
     @BeforeClass
     public void setUp(){
@@ -21,6 +23,7 @@ public class BaseTests {
 
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
+        hoverPage = new HoverPage(driver);
     }
 
     @AfterClass
