@@ -12,6 +12,7 @@ public class HomePage {
     private By keyPressesLink = By.linkText("Key Presses");
     private By javascriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink = By.linkText("File Upload");
+    private By wysiwyEditorLink = By.linkText("WYSIWYG Editor");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -45,7 +46,11 @@ public class HomePage {
     public FileUploadPage clickFileUploadLink(){
         driver.findElement(fileUploadLink).click();
         return new FileUploadPage(driver);
+    }
 
+    public WysiwyEditorPage clickWysiwyEditorLink(){
+        driver.findElement(wysiwyEditorLink).click();
+        return new WysiwyEditorPage(driver);
     }
 
 }
