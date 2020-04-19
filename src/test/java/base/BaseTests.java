@@ -15,6 +15,7 @@ public class BaseTests {
     protected KeyPressesPage keyPressesPage;
     protected AlertsPage alertsPage;
     protected FileUploadPage fileUploadPage;
+    protected WysiwyEditorPage wysiwyEditorPage;
 
     @BeforeClass
     public void setUp(){
@@ -28,6 +29,7 @@ public class BaseTests {
         //keyPressesPage = new KeyPressesPage(driver);
         alertsPage = new AlertsPage(driver);
         fileUploadPage = new FileUploadPage(driver);
+        wysiwyEditorPage = new WysiwyEditorPage(driver);
     }
 
     @AfterClass
