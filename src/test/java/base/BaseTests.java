@@ -6,6 +6,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.*;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTests {
 
     private WebDriver driver;
@@ -16,6 +18,8 @@ public class BaseTests {
     protected AlertsPage alertsPage;
     protected FileUploadPage fileUploadPage;
     protected WysiwyEditorPage wysiwyEditorPage;
+    protected DynamicLoadingPage dynamicLoadingPage;
+    protected DynamicLoadingExample1Page dynamicLoadingExample1Page;
 
     @BeforeClass
     public void setUp(){
@@ -30,6 +34,8 @@ public class BaseTests {
         alertsPage = new AlertsPage(driver);
         fileUploadPage = new FileUploadPage(driver);
         wysiwyEditorPage = new WysiwyEditorPage(driver);
+        dynamicLoadingPage = new DynamicLoadingPage(driver);
+        dynamicLoadingExample1Page = new DynamicLoadingExample1Page(driver);
     }
 
     @AfterClass

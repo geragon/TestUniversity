@@ -13,6 +13,7 @@ public class HomePage {
     private By javascriptAlertsLink = By.linkText("JavaScript Alerts");
     private By fileUploadLink = By.linkText("File Upload");
     private By wysiwyEditorLink = By.linkText("WYSIWYG Editor");
+    private By dinamicLoadingLink = By.linkText("Dynamic Loading");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -51,6 +52,11 @@ public class HomePage {
     public WysiwyEditorPage clickWysiwyEditorLink(){
         driver.findElement(wysiwyEditorLink).click();
         return new WysiwyEditorPage(driver);
+    }
+
+    public DynamicLoadingPage clickDinamicLoadingLink(){
+        driver.findElement(dinamicLoadingLink).click();
+        return new DynamicLoadingPage(driver);
     }
 
 }
