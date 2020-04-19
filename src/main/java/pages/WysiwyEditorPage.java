@@ -40,7 +40,6 @@ public class WysiwyEditorPage {
 
     private void switchToEditArea(){
         driver.switchTo().frame(editorIframeId);
-        driver.switchTo().frame
     }
 
     private void switchToMainArea(){
