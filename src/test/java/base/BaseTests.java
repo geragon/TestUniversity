@@ -14,6 +14,7 @@ public class BaseTests {
     protected HoverPage hoverPage;
     protected KeyPressesPage keyPressesPage;
     protected AlertsPage alertsPage;
+    protected FileUploadPage fileUploadPage;
 
     @BeforeClass
     public void setUp(){
@@ -26,6 +27,7 @@ public class BaseTests {
         hoverPage = new HoverPage(driver);
         //keyPressesPage = new KeyPressesPage(driver);
         alertsPage = new AlertsPage(driver);
+        fileUploadPage = new FileUploadPage(driver);
     }
 
     @AfterClass
