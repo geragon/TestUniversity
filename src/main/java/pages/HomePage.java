@@ -14,6 +14,8 @@ public class HomePage {
     private By fileUploadLink = By.linkText("File Upload");
     private By wysiwyEditorLink = By.linkText("WYSIWYG Editor");
     private By dinamicLoadingLink = By.linkText("Dynamic Loading");
+    private By largeDeepDomLink = By.linkText("Large & Deep DOM");
+    private By infiniteScrollLink = By.linkText("Infinite Scroll");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -57,6 +59,16 @@ public class HomePage {
     public DynamicLoadingPage clickDinamicLoadingLink(){
         driver.findElement(dinamicLoadingLink).click();
         return new DynamicLoadingPage(driver);
+    }
+
+    public LargeAndDeepDomPage clickLargeDeepDomLink(){
+        driver.findElement(largeDeepDomLink).click();
+        return new LargeAndDeepDomPage(driver);
+    }
+
+    public InfiniteScrollPage clickInfiniteScrollLink(){
+        driver.findElement(infiniteScrollLink).click();
+        return new InfiniteScrollPage(driver);
     }
 
 }
