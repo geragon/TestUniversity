@@ -6,8 +6,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.*;
 
-import java.util.concurrent.TimeUnit;
-
 public class BaseTests {
 
     private WebDriver driver;
@@ -20,12 +18,15 @@ public class BaseTests {
     protected WysiwyEditorPage wysiwyEditorPage;
     protected DynamicLoadingPage dynamicLoadingPage;
     protected DynamicLoadingExample1Page dynamicLoadingExample1Page;
+    protected LargeAndDeepDomPage largeAndDeepDomPage;
+    protected InfiniteScrollPage infiniteScrollPage;
 
     @BeforeClass
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();
 
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
@@ -36,6 +37,8 @@ public class BaseTests {
         wysiwyEditorPage = new WysiwyEditorPage(driver);
         dynamicLoadingPage = new DynamicLoadingPage(driver);
         dynamicLoadingExample1Page = new DynamicLoadingExample1Page(driver);
+        largeAndDeepDomPage = new LargeAndDeepDomPage(driver);
+        infiniteScrollPage = new InfiniteScrollPage(driver);
     }
 
     @AfterClass
