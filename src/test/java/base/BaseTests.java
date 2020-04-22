@@ -5,6 +5,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -34,9 +35,8 @@ public class BaseTests {
     @BeforeClass
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(getChromeOptions());
         driver.get("https://the-internet.herokuapp.com/");
-        driver.manage().window().maximize();
 
         homePage = new HomePage(driver);
         dropdownPage = new DropdownPage(driver);
@@ -74,6 +74,14 @@ public class BaseTests {
 
     public WindowManager getWindowManager(){
          return new WindowManager(driver);
+    }
+
+    private ChromeOptions getChromeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        //options.setHeadless(true);//Ejecuta las pruebas sin abrir el broser
+        options.addArguments("--start-maximized");
+        options.addArguments("disable-infobars"); //DEsabilita el mensaje que dice que chrome está siendo controlado por algo automatizado
+        return options;
     }
 
 }

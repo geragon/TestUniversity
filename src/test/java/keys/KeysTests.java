@@ -12,7 +12,7 @@ public class KeysTests extends BaseTests {
     public void testBackspace(){
         keyPressesPage = homePage.clickKeyPressesLink();
         keyPressesPage.enterText("A" + Keys.F5);
-        assertEquals(keyPressesPage.getResult(), "You entered:");
+        assertEquals(keyPressesPage.getResult(), "You entered: F5");
     }
 
 }
