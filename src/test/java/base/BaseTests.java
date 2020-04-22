@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.*;
+import utils.WindowManager;
 
 public class BaseTests {
 
@@ -20,6 +21,7 @@ public class BaseTests {
     protected DynamicLoadingExample1Page dynamicLoadingExample1Page;
     protected LargeAndDeepDomPage largeAndDeepDomPage;
     protected InfiniteScrollPage infiniteScrollPage;
+    protected MultipleWindowsPage multipleWindowsPage;
 
     @BeforeClass
     public void setUp(){
@@ -39,10 +41,17 @@ public class BaseTests {
         dynamicLoadingExample1Page = new DynamicLoadingExample1Page(driver);
         largeAndDeepDomPage = new LargeAndDeepDomPage(driver);
         infiniteScrollPage = new InfiniteScrollPage(driver);
+        multipleWindowsPage = new MultipleWindowsPage(driver);
+
     }
 
     @AfterClass
     public void tearDown(){
         driver.quit();
     }
+
+    public WindowManager getWindowManager(){
+         return new WindowManager(driver);
+    }
+
 }

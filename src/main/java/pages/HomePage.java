@@ -16,6 +16,7 @@ public class HomePage {
     private By dinamicLoadingLink = By.linkText("Dynamic Loading");
     private By largeDeepDomLink = By.linkText("Large & Deep DOM");
     private By infiniteScrollLink = By.linkText("Infinite Scroll");
+    private By multipleWindowsLink = By.linkText("Multiple Windows");
 
     public HomePage(WebDriver driver){
         this.driver = driver;
@@ -69,6 +70,11 @@ public class HomePage {
     public InfiniteScrollPage clickInfiniteScrollLink(){
         driver.findElement(infiniteScrollLink).click();
         return new InfiniteScrollPage(driver);
+    }
+
+    public MultipleWindowsPage clickMultipleWindows(){
+        driver.findElement(multipleWindowsLink).click();
+        return new MultipleWindowsPage(driver);
     }
 
 }
